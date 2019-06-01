@@ -1,7 +1,6 @@
 package com.skilldistillery.travel.services;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +32,7 @@ public class CountryServiceImpl implements CountryService {
 		newC.setName(country.getName());
 		newC.setDateVisited(country.getDateVisited());
 		newC.setNotes(country.getNotes());
+		newC.setVisited(country.getVisited());
 		repo.saveAndFlush(newC);
 		return newC;
 	}

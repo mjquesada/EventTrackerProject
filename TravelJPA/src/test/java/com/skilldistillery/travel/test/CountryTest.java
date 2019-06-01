@@ -47,7 +47,7 @@ class CountryTest {
 		assertEquals(1, country.getId());
 		assertEquals("England", country.getName());
 		assertEquals("2015-02-01", country.getDateVisited().toString());
-		
+		assertEquals(true, country.getVisited());
 	}
 	
 }

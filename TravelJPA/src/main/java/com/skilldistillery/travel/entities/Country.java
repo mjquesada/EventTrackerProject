@@ -25,6 +25,8 @@ public class Country {
 	@Column(name="date_visited")
 	@Temporal(TemporalType.DATE)
 	private Date dateVisited;
+	
+	private Boolean visited;
 
 	public int getId() {
 		return id;
@@ -58,21 +60,18 @@ public class Country {
 		this.dateVisited = dateVisited;
 	}
 
+	public Boolean getVisited() {
+		return visited;
+	}
+
+	public void setVisited(Boolean visited) {
+		this.visited = visited;
+	}
+
 	@Override
 	public String toString() {
-		return "Country [id=" + id + ", name=" + name + ", notes=" + notes + ", dateVisited=" + dateVisited + "]";
-	}
-
-	public Country(int id, String name, String notes, Date dateVisited) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.notes = notes;
-		this.dateVisited = dateVisited;
-	}
-
-	public Country() {
-		super();
+		return "Country [id=" + id + ", name=" + name + ", notes=" + notes + ", dateVisited=" + dateVisited
+				+ ", visited=" + visited + "]";
 	}
 
 	@Override
@@ -83,6 +82,7 @@ public class Country {
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((notes == null) ? 0 : notes.hashCode());
+		result = prime * result + ((visited == null) ? 0 : visited.hashCode());
 		return result;
 	}
 
@@ -112,11 +112,28 @@ public class Country {
 				return false;
 		} else if (!notes.equals(other.notes))
 			return false;
+		if (visited == null) {
+			if (other.visited != null)
+				return false;
+		} else if (!visited.equals(other.visited))
+			return false;
 		return true;
 	}
 
-	
+	public Country(int id, String name, String notes, Date dateVisited, Boolean visited) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.notes = notes;
+		this.dateVisited = dateVisited;
+		this.visited = visited;
+	}
 
+	public Country() {
+		super();
+	}
+
+	
 	
 	
 }

@@ -25,48 +25,55 @@ public class CountryController {
 	public String ping() {
 		return "pong";
 	}
-	
+
 	@Autowired
 	private CountryService svc;
-	
-	@Autowired 
+
+	@Autowired
 	private CountryRepository repo;
-	
-	
+
 	@GetMapping("countries")
-	public List<Country> listAllCountries(){
+	public List<Country> listAllCountries() {
 		return svc.listAllCountries();
 	}
-	
+
 	@GetMapping("countries/{id}")
 	public Optional<Country> getCountryById(@PathVariable int id) {
 		Optional<Country> country = repo.findById(id);
-		
+
 		return country;
 	}
+
+	@GetMapping("countries/visited")
+	public List<Country> getCountriesVisited() {
+		return repo.getCountryByVisited(true);
+	}
 	
+	@GetMapping("countries/toVisit")
+	public List<Country> getCountriesToVisit() {
+		return repo.getCountryByVisited(false);
+	}
+	
+
 	@GetMapping("countries/search/{name}")
-	public Country getCountryByName(@PathVariable String name){
+	public Country getCountryByName(@PathVariable String name) {
 		Country country = repo.findByName(name);
 		return country;
 	}
-	
+
 	@PostMapping("countries/new")
 	public Country createNewCountry(@RequestBody Country country) {
 		return svc.createCountry(country);
 	}
-	
+
 	@PutMapping("countries/replace/{id}")
-		public Country replaceCountry(@RequestBody Country country, @PathVariable int id) {
-			return svc.replaceCountry(id, country);
-		}
-	
+	public Country replaceCountry(@RequestBody Country country, @PathVariable int id) {
+		return svc.replaceCountry(id, country);
+	}
+
 	@DeleteMapping("countries/{id}")
 	public Boolean deleteCountryById(@PathVariable int id, Country country) {
 		return svc.deleteById(country, id);
 	}
-	
-	
-	}
-	
-	
+
+}
