@@ -9,7 +9,7 @@
     </provider>
     
     <!--  Here are my entities! -->
-    <class>com.skilldistillery.jpavideostore.entities.Country</class>
+    <class>com.skilldistillery.travel.entities.Country</class>
     
 
     <properties>
