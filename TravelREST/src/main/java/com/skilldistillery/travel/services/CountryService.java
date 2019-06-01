@@ -9,6 +9,7 @@ public interface CountryService {
 	List<Country> listAllCountries();
 	Country createCountry(Country country);
 	Country replaceCountry(int id, Country country);
-	Boolean deleteById(int id);
+	Boolean deleteById(Country country, int id);
+	
 	
 }
