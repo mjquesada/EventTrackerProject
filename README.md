@@ -4,6 +4,21 @@ The purpose of this program is to function as an online travel journal.
 The purpose of this program is to act as an online journal for all of the destinations you have visited, as well as the ones that you would like to visit.
 ## Installation
 The first requirement is to obtain a copy of the database from Github/mjquesada. The project incorporates Gradle as well as Spring, so both of those most be installed in your IDE in order to run the program successfully.
+
+## Link to deployed app
+Currently deployed on EC2 - ( http://3.19.15.5:8080/TravelREST/api/ )
+
+### Paths
+
+- Get all countries ("api/countries")
+- Search country by Id ("api/countries/{id}")
+- Get all the countries you have visited ("api/countries/visited")
+- Get all the countries you would like to visit ("api/countries/toVisit")
+- Search country by name ("api/countries/search/{name}")
+- Create new country ("api/countries/new")
+- Replace a country ("api/countries/replace/{id}")
+- Delete country by Id ("api/countries/{id}")
+
 ## UML
 
 ## How To Use

@@ -23,8 +23,9 @@ DROP TABLE IF EXISTS `country` ;
 CREATE TABLE IF NOT EXISTS `country` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `date_visited` VARCHAR(45) NULL,
-  `notes` VARCHAR(45) NULL,
+  `date_visited` DATE NULL,
+  `notes` TEXT NULL,
+  `visited` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -44,11 +45,15 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `traveldb`;
-INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`) VALUES (1, 'England', '02-02-2015', 'I visited England for the first time while on deployment in 2015');
-INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`) VALUES (2, 'Thailand', '09-01-2015', 'First destination for solo trip');
-INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`) VALUES (3, 'Vietnam', '11-01-2015', 'Traveled Vietnam for a month with a group of friends');
-INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`) VALUES (4, 'Australia', '12-05-2015', 'Moved to Australia on a WHV, stayed for seven months');
-INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`) VALUES (5, 'France', '08-15-2016', 'Went to school in France for a year');
+INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`, `visited`) VALUES (1, 'England', '2015-02-01', 'I visited England for the first time while on deployment in 2015', true);
+INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`, `visited`) VALUES (2, 'Thailand', '2015-09-01', 'First destination for solo trip', true);
+INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`, `visited`) VALUES (3, 'Vietnam', '2015-11-01', 'Traveled Vietnam for a month with a group of friends', true);
+INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`, `visited`) VALUES (4, 'Australia', '2015-12-05', 'Moved to Australia on a WHV, stayed for seven months', true);
+INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`, `visited`) VALUES (5, 'France', '2016-08-15', 'Went to school in France for a year', true);
+INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`, `visited`) VALUES (6, 'Holland', '2016-12-22', 'Spent Christmas in Amsterdam', true);
+INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`, `visited`) VALUES (7, 'Germany', '2016-12-27', 'Spent New Years in Berlin', true);
+INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`, `visited`) VALUES (8, 'Egypt', NULL, 'Would like to visit the Pyramids', false);
+INSERT INTO `country` (`id`, `name`, `date_visited`, `notes`, `visited`) VALUES (9, 'Peru', NULL, 'Would like to vist Machu Pichu', false);
 
 COMMIT;
 
