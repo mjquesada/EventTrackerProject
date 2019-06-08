@@ -1,6 +1,8 @@
 window.addEventListener('load', function(e) {
 	var editForm = document.getElementById("editTravelDiv");
 	editForm.style.display = "none";
+	var deleteForm = document.getElementById("deleteTravelDiv");
+	deleteForm.style.display = "none";
 	getAllEvents();
 	document.addTravelForm.submit.addEventListener('click', addCountry);
 	document.editTravelForm.submit.addEventListener('click', editCountry);
@@ -58,26 +60,32 @@ function displayAllEvents(countries) {
 	let th = document.createElement('th');
 	table.appendChild(th);
 	let idTd = document.createElement('td');
-	idTd.textContent = "id";
+	idTd.textContent = "id        ";
 	th.appendChild(idTd);
 	
-	let th = document.createElement('th');
-	table.appendChild(th);
+	let th2 = document.createElement('th');
+	table.appendChild(th2);
 	let nameTd = document.createElement('td');
-	nameTd.textContent = "Name";
-	th.appendChild(nameTd);
+	nameTd.textContent = "Name          ";
+	th2.appendChild(nameTd);
 	
+	let th3 = document.createElement('th');
+	table.appendChild(th3);
 	let dateTd = document.createElement('td');
-	dateTd.textContent = "Date Visited";
-	th.appendChild(dateTd);
+	dateTd.textContent = "Date Visited       ";
+	th3.appendChild(dateTd);
 	
+	let th4 = document.createElement('th');
+	table.appendChild(th4);
 	let visitedTd = document.createElement('td');
-	visitedTd.textContent = "Visited Already";
-	th.appendChild(visitedTd);
+	visitedTd.textContent = "Visited        ";
+	th4.appendChild(visitedTd);
 
+	let th5 = document.createElement('th');
+	table.appendChild(th5);
 	let notesTd = document.createElement('td');
 	notesTd.textContent = "Notes";
-	th.appendChild(notesTd);
+	th5.appendChild(notesTd);
 
 	
 
@@ -192,10 +200,14 @@ function editCountry(e) {
 
 function showEditForm(e) {
 	var editForm = document.getElementById("editTravelDiv");
-	editForm.style.display = "block";
+	editForm.style.display = "flex";
 	document.editTravelForm.submit.id = e.target.id;
 	document.deleteTravelForm.submit.id = e.target.id;
 
+	var editForm = document.getElementById("deleteTravelDiv");
+	editForm.style.display = "flex";
+	document.editTravelForm.submit.id = e.target.id;
+	document.deleteTravelForm.submit.id = e.target.id;
 }
 
 function deleteCountry(e) {
