@@ -61,12 +61,12 @@ public class CountryController {
 		return country;
 	}
 
-	@PostMapping("countries/new")
+	@PostMapping("countries")
 	public Country createNewCountry(@RequestBody Country country) {
 		return svc.createCountry(country);
 	}
 
-	@PutMapping("countries/replace/{id}")
+	@PutMapping("countries/{id}")
 	public Country replaceCountry(@RequestBody Country country, @PathVariable int id) {
 		return svc.replaceCountry(id, country);
 	}

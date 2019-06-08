@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>Travel</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body>
+
+	<p id="agg"> </p>
+
+	<div id="custom">
+
+	<form class="travelForm" name="addTravelForm">
+		<input type="text" name="name">Name<br> <input
+			type="text" name="date">Date Visited<br> <input
+			type="text" name="notes">Notes<br> <input type="text"
+			name="visited">Visited (T/F)<br> <input type="submit"
+			name="submit" value="Create">
+	</form>
+	
+	</div>
+
+	<div id="editTravelDiv">
+		<form class="editTravelForm" name="editTravelForm">
+			<input type="text" name="name">Name<br> <input
+				type="text" name="date">Date Visited<br> <input
+				type="text" name="notes">Notes<br> <input type="text"
+				name="visited">Visited (T/F)<br> <input type="submit"
+				name="submit" value="Edit">
+		</form>
+		<br>
+		<form class="deleteTravelForm" name="deleteTravelForm">
+			<input type="submit" name="submit" value="Delete">
+		</form>
+
+	</div>
+
+
+	<div id="travelObj"></div>
+	
+	
+
+
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
