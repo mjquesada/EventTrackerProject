@@ -22,16 +22,19 @@ Currently deployed on EC2 - ( http://3.19.15.5:8080/TravelREST/api/ )
 ## UML
 
 ## How To Use
-At the moment, the only functionality is through the back-end, as the front-end has not yet been built out.  However, when the program is complete, you will have multiple options.
+On the home page, you are presented with a couple of options.  At the very top of the page, you can see the number of countries you have visited, in relation to all of the countries in the database.
 
-You have the ability to find all the countries in the database (db), all the countries you have visited, and all the countries you want to visit.
+You will also see the full list of all the countries in the database underneath that.
 
-You can search the database by country name or by its id.
+You have a couple of options from the front-end.  You can add a a new country in the input box, and that country will be added to the database, and you can view it in the list.
 
-You can replace a country with a different country, or you can delete the country entirely.
+If you click on an existing country, you will be presented with the option to either edit that country, or delete it.  If you choose to edit it, the country that you input will replace the country that you clicked on.  Deleting it will remove it entirely.
+
 ## Concepts / Technologies Used
 - Built in Spring Tool Suite (STS/Eclipse)
 - Java
+- JavaScript
+- XHR Request
 - Gradle
 - MySQL
 - Spring REST
@@ -48,3 +51,4 @@ You can replace a country with a different country, or you can delete the countr
 - Reinforced Object Oriented Programming fundamentals
 - Working with RequestMapping, Autowiring, and Entity management
 - Working with repositories and services
+- Learning full-stack development with XHR
