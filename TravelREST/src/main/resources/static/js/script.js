@@ -234,6 +234,3 @@ function deleteCountry(e) {
 	xhr.send(null);
 
 }
-
-
-

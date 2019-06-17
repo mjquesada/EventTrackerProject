@@ -32,6 +32,7 @@ If you click on an existing country, you will be presented with the option to ei
 
 ## Concepts / Technologies Used
 - Built in Spring Tool Suite (STS/Eclipse)
+- Angular
 - Java
 - JavaScript
 - XHR Request
@@ -52,3 +53,4 @@ If you click on an existing country, you will be presented with the option to ei
 - Working with RequestMapping, Autowiring, and Entity management
 - Working with repositories and services
 - Learning full-stack development with XHR
+- Learned how to work in Anuglar to build a front-end

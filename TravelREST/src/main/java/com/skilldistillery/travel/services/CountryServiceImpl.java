@@ -13,10 +13,6 @@ public class CountryServiceImpl implements CountryService {
 
 	@Autowired
 	private CountryRepository repo;
-	
-	
-	
-	
 
 	@Override
 	public List<Country> listAllCountries() {
