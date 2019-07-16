@@ -2,9 +2,10 @@ import { CountryService } from './../../services/country.service';
 import { Component, OnInit } from '@angular/core';
 import { Country } from 'src/app/models/country';
 import { NgForm } from '@angular/forms';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-home', 
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -12,9 +13,6 @@ export class HomeComponent implements OnInit {
   // Fields
   countryList: Country[] = [];
   editCountry = null;
-  // haveVisited: number;
-  // toVisit: number;
-  // total: number;
 
   // Constructor
   constructor(private countryService: CountryService) {}
@@ -73,7 +71,7 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  aggregate(country: Country): string {
+  aggregate() {
     let haveVisited = 0;
     let toVisit = 0;
     const total = this.countryList.length;
@@ -87,7 +85,8 @@ export class HomeComponent implements OnInit {
       }
     }
     return 'You have visited ' + haveVisited + ' out of ' + total + ' countries,' +
-            ' you have ' + toVisit + ' left to visit.';
+            ' you have ' + toVisit + ' left to visit';
 
   }
+
 }

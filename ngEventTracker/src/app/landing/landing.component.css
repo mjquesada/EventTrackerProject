@@ -1,0 +1,19 @@
+.view {
+    height: 100vh !important;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .hr-light {
+    border-top: 3px solid #fff;
+    width: 80px;
+  }
+
+  h2 {
+      color: white;
+  }
+
+  a {
+      font-size: large;
+      color: white;
+  }

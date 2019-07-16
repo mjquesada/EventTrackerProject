@@ -4,14 +4,16 @@ import { Country } from '../models/country';
 import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { identifierModuleUrl } from '@angular/compiler';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountryService {
   // Fields
-  private baseUrl = 'http://localhost:8087/';
-  private url = this.baseUrl + 'api/countries';
+  // private baseUrl = 'http://localhost:8087/';
+  // private baseUrl = 'http://TravelREST/';
+  private url = environment.baseUrl + 'api/countries';
 
   // Constructor
   constructor(private http: HttpClient) {}

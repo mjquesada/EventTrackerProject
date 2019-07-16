@@ -1,4 +1,4 @@
-<h1>Travel</h1>
+<h1>Travel Journal</h1>
 
 <div id="callAggregate">
     <h3>{{aggregate()}}</h3>
@@ -8,7 +8,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <td><strong>Id</strong></td>
+      <!-- <td><strong>Id</strong></td> -->
       <td><strong>Name</strong></td>
       <td><strong>Date Visited</strong></td>
       <td><strong>Visited</strong></td>
@@ -17,41 +17,43 @@
   </thead>
   <tbody>
     <tr *ngFor="let country of countryList" (click)="selected = country">
-      <td>{{ country.id }}</td>
+      <!-- <td>{{ country.id }}</td> -->
       <td>{{ country.name }}</td>
       <td>{{ country.dateVisited }}</td>
       <td>{{ country.visited }}</td>
       <td>{{ country.notes }}</td>
       <td><button class='btn btn-primary' (click)="editCountry = country">Edit</button></td>
-      <td><button class='btn btn-primary' (click)="deleteCountry(country.id)">Delete</button></td>
+      <td><button class='btn btn-danger' (click)="deleteCountry(country.id)">Delete</button></td>
     </tr>
   </tbody>
 </table>
 </div>
 
 
-
-<div id="addCountry">
-  <form #addCountryForm="ngForm">
-    <h3>Add Country</h3>
-    <input type="text" name="name" ngModel placeholder="Name" />
-    <input type="text" name="dateVisited" ngModel placeholder="Date Visited" />
-    <input type="text" name="visited" ngModel placeholder="Visited" />
-    <input type="text" name="notes" ngModel placeholder="Notes" />
-    <button class='btn btn-primary' (click)="addNewCountry(addCountryForm)">Add Country</button>
-  </form>
-</div>
-
 <div id="editCountry" *ngIf="editCountry">
   <form>
     <H3>Edit Country</H3>
-    <p>{{editCountry.id}}</p>
+    <!-- <p>{{editCountry.id}}</p> -->
       <input type="text" name="editName" placeholder="Name" [(ngModel)]="editCountry.name" />
       <input type="text" name="editDateVisited" placeholder="Date Visited" [(ngModel)]="editCountry.dateVisited" />
       <input type="text" name="editVisited" placeholder="Visited" [(ngModel)]="editCountry.visited" />
       <input type="text" name="editnotes" placeholder="Notes" [(ngModel)]="editCountry.notes" />
       <button class='btn btn-primary' name="updateCountry" (click)="updateCountry(editCountry)"> Save</button>
-      <button class='btn btn-primary' name="cancelEdit" (click)="editCountry = null"> Cancel</button>
+      <button class='btn btn-danger' name="cancelEdit" (click)="editCountry = null"> Cancel</button>
   </form>
 </div>
+
+<div id="addCountry">
+    <form #addCountryForm="ngForm">
+      <h3>Add a Country</h3>
+      <input type="text" name="name" ngModel placeholder="Name" />
+      <input type="text" name="dateVisited" ngModel placeholder="Date Visited" />
+      <input type="text" name="visited" ngModel placeholder="Visited" />
+      <input type="text" name="notes" ngModel placeholder="Notes" />
+      <button class='btn btn-success' (click)="addNewCountry(addCountryForm)">Add Country</button>
+    </form>
+  </div>
+  <hr>
+
+
 
